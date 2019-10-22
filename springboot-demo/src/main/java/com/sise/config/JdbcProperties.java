@@ -2,7 +2,7 @@ package com.sise.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "jdbc")
+//@ConfigurationProperties(prefix = "jdbc")
 public class JdbcProperties {
     private String url;
     private String driverClassName;

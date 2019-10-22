@@ -2,6 +2,7 @@ package com.sise.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,6 +38,7 @@ public class JdbcConfig {
 /**
  * 方式2
  */
+/*
 @Configuration
 @EnableConfigurationProperties(JdbcProperties.class)
 public class JdbcConfig {
@@ -45,4 +47,19 @@ public class JdbcConfig {
 //    public JdbcConfig(JdbcProperties prop){
 //        this.prop = prop;
 //    }
+}*/
+
+/**
+ * 方式3
+ */
+@Configuration
+public class JdbcConfig {
+
+    @Bean
+    // 声明要注入的属性前缀，SpringBoot会自动把相关属性通过set方法注入到DataSource中
+    @ConfigurationProperties(prefix = "jdbc")
+    public DataSource dataSource() {
+        DruidDataSource dataSource = new DruidDataSource();
+        return dataSource;
+    }
 }

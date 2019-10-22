@@ -10,19 +10,19 @@ import javax.sql.DataSource;
 @RestController
 public class TestController {
 
-/*
+
     @Autowired
     private DataSource dataSource;
-*/
 
-    private JdbcProperties prop;
+
+  /*  private JdbcProperties prop;
     public TestController(JdbcProperties prop){
         this.prop = prop;
-    }
+    }*/
 
     @GetMapping("hello")
     public String hello(){
-        System.out.println(prop);
+        System.out.println(dataSource);
         return "hello, spring boot!";
     }
 }
