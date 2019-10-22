@@ -1,6 +1,0 @@
-logging:
-    level:
-       cn.itcast: debug
-       org.springframework: debug
-server:
-     port: 8088
