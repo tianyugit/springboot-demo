@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<h1>
+    <div th:switch="${user.role}">
+        <p th:case="'admin'">用户是管理员</p>
+        <p th:case="'manager'">用户是经理</p>
+        <p th:case="*">用户是别的玩意</p>
+    </div>
+</h1>
+</body>
+</html>
